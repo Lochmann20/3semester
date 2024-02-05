@@ -6,16 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    
+
     <script>
+        "use strict"
 
         // Hvad er forskellen mellem letters og newarr
-        // let letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
-        // console.log(letters[3]);
+        let letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
+        console.log(letters[3]);
 
         // let newarr = letters;
         // newarr[4] = "*";
         // console.log(letters[4]);
+        // console.log("letters.length", letters.length);
+        // console.log("sidste letter", letters[letters.length -1]);
 
 
 
@@ -49,24 +52,25 @@
         // result= people.indexOf("Fred"); = -1
         // result= people.splice(result,1); = ['Harry']
 
-        // Push tilføjer et eller flere elementer til slutningen af at array og returnerer den nye længde arrayet
+        // Push tilføjer et eller flere elementer til slutningen af at arrayet
         // Pop betyder at den fjerner det sidste element af arrayet 
-        // slice betyder at den returnere den udtrukne del i en nye streng (metoden ændrer ikke den orgianle streng)
+        // slice betyder at den tager et stykke ud men lade den orginale blive
         // splice bruges til at tilføje eller fjerne elementer i et eksisterende array
         // indexOf returnerer positionen for den første forekomst af en værdi i en streng
         // unshift betyder at den tilføjer nye elementer til begyndelsen af et array
-        // shift fjerner den første element af et array
+        // shift fjerner den første element af et array og tilføjer en i starten
 
 
 
+        // det er 3 måder at gøre det samme på
         const str = "jkfdlnklsdn";
-        console.log(arr3);
-
+        console.log("split", str.split(""));
+        console.log("from", Array.from(""));
+        console.log("spread", str.spread(""));
+        
         // const letters = Array.from("jkfdlnklsdn"); = (11) ['j', 'k', 'f', 'd', 'l', 'n', 'k', 'l', 's', 'd', 'n']
         // const str = "jkfdlnklsdn"; = jkfdlnklsdn
-        // const arr1 = str.split(""); = not defined
-        // const arr2 = Array.from(str); = not defined
-        // const arr3 = [...str]; = not defined
+
 
         
 

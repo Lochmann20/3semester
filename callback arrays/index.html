@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks Arrays</title>
+</head>
+<body>
+    <script>
+
+// fungerer ikke
+        // function greeting( firstName ) {
+        //     return `hello ${firstName}`;
+        // }
+        // const sayHi = greeting;
+
+
+        // function congreet(firstName) {
+        //     console.log(`hello ${firstName}`);
+        // }
+
+        // setTimeout( congreet, 1000, "Ron");
+
+
+
+        // vi har to objekter her person3 og 4
+
+        const person3 = {
+            firstName: "Harry",
+            lastName: "Pooter",
+            hired: "false"
+        };
+
+        const person4 = {
+            firstName: "Fred",
+            lastName: "Weasley",
+            hired: "false"
+        };
+
+        function hire(person){
+            person.hired = true;
+        }
+
+        function fire(person){
+            person.hired = false;
+        }
+
+        function fireOrHire(action, person) {
+            action(person);
+        }
+
+        // hire(person3);
+        fireOrHire(hire, person3);
+        console.log(person3);
+
+        // fire(person4);
+        fireOrHire(fire, person4);
+        console.log(person4);
+
+
+        
+
+
+    </script>
+</body>
+</html>
