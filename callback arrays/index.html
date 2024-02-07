@@ -8,7 +8,7 @@
 <body>
     <script>
 
-// fungerer ikke
+        // fungerer ikke
         // function greeting( firstName ) {
         //     return `hello ${firstName}`;
         // }
@@ -23,42 +23,85 @@
 
 
 
+
+
+
         // vi har to objekter her person3 og 4
+        // const person3 = {
+        //     firstName: "Harry",
+        //     lastName: "Pooter",
+        //     hired: "false"
+        // };
 
-        const person3 = {
-            firstName: "Harry",
-            lastName: "Pooter",
-            hired: "false"
-        };
+        // const person4 = {
+        //     firstName: "Fred",
+        //     lastName: "Weasley",
+        //     hired: "false"
+        // };
 
-        const person4 = {
-            firstName: "Fred",
-            lastName: "Weasley",
-            hired: "false"
-        };
+        // function hire(person){
+        //     person.hired = true;
+        // }
 
-        function hire(person){
-            person.hired = true;
-        }
+        // function fire(person){
+        //     person.hired = false;
+        // }
 
-        function fire(person){
-            person.hired = false;
-        }
+        // function fireOrHire(action, person) {
+        //     action(person);
+        // }
 
-        function fireOrHire(action, person) {
-            action(person);
-        }
+        // // hire(person3);
+        // fireOrHire(hire, person3);
+        // console.log(person3);
 
-        // hire(person3);
-        fireOrHire(hire, person3);
-        console.log(person3);
+        // // fire(person4);
+        // fireOrHire(fire, person4);
+        // console.log(person4);
 
-        // fire(person4);
-        fireOrHire(fire, person4);
-        console.log(person4);
+
+
+
+
+
+
+
+        // callBack funtion med flere parameters
+        // "use strict"
+
+        // const people = ["Harry", "Ron", "Hermione", "Neville"];
+
+        // function sayHello(person) {
+        //     console.log(`Hello ${person}`);
+        // }
+
+        // disse to metoder gør præsic det samme
+        // people.forEach(sayHello);
+
+        // people.forEach((sayHello) => {
+        //     console.log(`Hello ${person}`);
+        // })
+
+
 
 
         
+
+
+
+        // forEach understøtter kun op til 3 og derfor er d undefined
+        // 1 element for arrayet 
+        // 2 index (nummeret i arrayet)
+        // 3 array (as a pointer to the original array)
+        const people = ["Harry", "Ron", "Hermione", "Neville"];
+        
+        function testParams(a, b, c, d) {
+            console.log(`a: ${a}, b: ${b}, c: ${c}, d: ${d},`);
+        }
+
+        people.forEach(testParams);
+
+
 
 
     </script>

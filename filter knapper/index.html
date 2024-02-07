@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+        <button data-filter="all">Vis alle</button>
+        <button data-filter="Electric">Elektrikse biler</button>
+        <button data-filter="bus">Busser</button>
+        <button data-filter="cykler">Cykle</button>
+
+    <script>
+
+
+   // filter Knapper
+   "use strict";
+   
+    document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", btnFilterEVTListener);
+    });
+
+
+    function btnFilterEVTListener(evt) {
+        // .dataset.filter fjerner button i consolen så det kun er data-filer="x" der bliver vist
+    console.log(evt.currentTarget.dataset.filter);
+    }
+
+    </script>
+</body>
+</html>

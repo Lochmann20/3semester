@@ -16,44 +16,95 @@
         max-width: 800px;
         min-width: 480px;
         margin: 0 auto;
-      }
+      } 
 
-      .box{
+      #game{
         border-color: blueviolet;
         border-style: solid;
         padding: 5%;
         margin-top: 15em;
         border-radius: 25px;
         box-shadow: 1px 2px 49px -2px blueviolet;
-      }
-
-      .form input[type="number"] {
-        width: 200px;
-      }
-
-      #myDIV{
         color: white;
       }
+
+      h1{
+        color: white;
+      }
+
+      button{
+        padding: 5px 15px;
+      }
+
 
     </style>
   </head>
 
   <body>
-    <div class="box">
-    <div id="myDIV">Tænk på et tal mellem 0 - 100</div>
 
-    <div class="buttons">
-    <button class="forLavt">For lavt</button>
-    <button class="forHøjt">For højt</button>
-    <button class="duGættedeDet">Du gættede det</button>
+    <div id="game">
+      <h1></h1>
 
-    <button onclick="myFunction()">Start spillet</button>
-    </div>
+      <button id="tooLow">For lavt</button>
+      <button id="tooHigh">For Højt</button>
+      <button id="bingo">Korrekt</button>
     </div>
 
 
-    <script>
-  
+
+<script>
+
+"use strict"
+let lowNum = 0;
+let highNum = 100;
+let computerGuess;
+let numberOfGuesses = 0;
+let computerText = document.querySelector("h1");
+
+document.querySelector("#tooLow").addEventListener("click", tooLowOrHigh)
+document.querySelector("#tooHigh").addEventListener("click", tooLowOrHigh)
+
+// computerens gæt
+computerGuesses();
+function computerGuesses() {
+  numberOfGuesses++;
+  computerGuess = Math.round(lowNum +(highNum - lowNum) /2);
+  computerText.textContent = computerGuess;
+  console.log("numberOfGuesses", numberOfGuesses)
+}
+
+
+function tooLowOrHigh(evt) {
+  console.log(evt.target.id);
+  if(evt.target.id === "tooLow") {
+    lowNum = computerGuess;
+  } else {
+    highNum = computerGuess;
+  }
+  computerGuesses();
+}
+
+// Man kan også bruge denne metode 
+// function tooLow() {
+//   console.log("LO");
+//   lowNum = compGuess;
+//   computerGuesses;
+// }
+
+
+// function tooHigh() {
+//   console.log("HI");
+//   highNum = compGuess;
+//   computerGuesses;
+// }
+
+
+
+
+// Mangler bingo
+
+
+
 
 
     </script>

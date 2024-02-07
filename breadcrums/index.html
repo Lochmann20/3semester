@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bread Crumbs</title>
+</head>
+
+<style>
+body{
+    background-color: black;
+}
+
+div{
+    color: white;
+    text-align: center;
+    margin-top: 25em;
+}
+
+button{
+    padding: 10px 15px;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+p{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+a{
+    color: white;
+}
+</style>
+
+
+<body>
+
+    <div>
+    <p></p>
+    <button>Generate Bread Crumbs</button>
+    </div>
+
+
+    <script>
+        const bc = [
+            { name: "Hvidevarer", link: "/hvidevarer" },
+            { name: "Vaskemaskiner", link: "/hvidevarer/vaskemaskiner" },
+            { name: "Bosch", link: "/hvidevarer/vaskemaskiner/bosch/" },
+        ];
+        
+        console.log("bc.length", bc.length);
+        document.querySelector("button").addEventListener("click", generateBreadCrumbs)
+        const pPointer = document.querySelector("p");
+
+        function generateBreadCrumbs() {
+            bc.forEach((crumb, i) => {
+              console.log("i", i);
+            //   pPointer.innerHTML += `<a href=${crumb.link}>${crumb.name} </a>   `;
+            
+            
+              if (i === bc.length - 1) {
+                pPointer.innerHTML += crumb.name;
+                // console.log("Det er det sidste element der hedder:", crumb.name);
+            } else {
+                pPointer.innerHTML += `<a href=${crumb.link}>${crumb.name} </a> /    `;
+            }
+            });
+        }
+
+
+        // array
+
+        // <a href=""></a>
+
+
+    </script>
+</body>
+</html>
