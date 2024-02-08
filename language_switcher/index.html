@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<style>
+    body{
+        background-color: antiquewhite;
+        text-align: start;
+        margin: 45em;
+        margin-top: 15%;
+    }
+
+   
+    
+    select{
+        background-color: transparent;
+        padding-top: 2px;
+        border: none;
+        font-size: larger;
+    }
+
+    .oversat{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .oversat section:last-child{
+        margin-top: 1.6em;
+    }
+    
+    
+    .result{
+        font-size: x-large;
+        margin-top: 2em;
+        font-weight: bold;
+    }
+    
+    option{
+        font-size: large;
+    }
+    
+    .header,
+    .footer{
+        font-size: x-large;
+    }
+    
+    p{
+        font-size: x-large;
+        margin-bottom: -0.1em;
+        font-weight: bold;
+    }
+
+
+</style>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher</title>
+    <script type="module" src="js.js"></script>
+</head>
+
+
+<body>
+    <label>
+        <h1>Choose a language:</h1>
+        <select class="option" name="option">
+          <option id="value" value="">Choose One …</option>
+          <option value="da">Dansk</option>
+          <option value="de">Tysk</option>
+          <option value="en">Engelsk</option>
+        </select>
+      </label>
+
+    <div class="oversat">
+    <section>
+    <div class="result"></div>
+    <header class="header"></header>
+    </section>
+
+    <section>
+    <p></p>
+    <div class="footer"></div>
+    </section>
+    </div>
+
+</body>
+
+</html>
