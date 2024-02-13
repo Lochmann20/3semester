@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<style>
+    #ball{
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: orange;
+        width: 8rem;
+    }
+
+    .ani{
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+        animation-name: ani;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+    }
+
+    @keyframes ani {
+        from {
+            background-color: orange;
+            transform: scale(1);
+        }
+
+        to {
+            background-color: red;
+            transform: scale(1.2);
+        }
+        
+    }
+
+</style>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Klik</button>
+
+    <div id="ball"></div>
+<script>
+
+document.querySelector("button").addEventListener("click", btnKlik);
+
+function btnKlik(){
+    document.querySelector("#ball").addEventListener("animationend", animationIterateANdEnd);
+    document.querySelector("#ball").addEventListener("animationinteration", animationIterateANdEnd);
+    document.querySelector("#ball").classList.add("ani");
+}
+
+function animationIterateANdEnd(evt){
+    console.log("animationIterateANdEnd", evt.type);
+    if(evt.type === "animationend"){
+        document.querySelector("#ball").classList.remove("ani");
+    }
+}
+
+</script>
+</body>
+</html>

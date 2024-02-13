@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+
+<style>
+    ul{
+
+    }
+
+
+</style>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul>
+        <li>Jeg er en li</li>
+        <li>Jeg er en li</li>
+        <li>Jeg er en li</li>
+        <li>Jeg er en li</li>
+        <li>Jeg er en li</li>
+        <li>Jeg er en li</li>
+
+    </ul>
+
+
+    <script>
+        document.querySelector("ul").addEventListener("pointerdown", btnKlik);
+
+        function btnKlik(evt){
+            console.log("currenTarget", evt.currenTarget);
+            console.log("Target", evt.Target);
+        }
+    </script>
+</body>
+</html>

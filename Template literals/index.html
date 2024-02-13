@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template literals</title>
+</head>
+
+<body>
+    <p></p>
+    <script src="index.js">
+        "use strict"
+ 
+        //template literal øvelse \n laver et linebreak (ny linje)
+        /*
+        const name = "Peter";
+        const animalName = "Mandu";
+        const animalType = "cat";
+        
+        console.log(`My name is ${name} \n I have a ${animalType} called ${animalName}`);
+        //får det frem på skærmen
+        document.querySelector("p").textContent = `My name is ${name} \n I have a ${animalType} called ${animalName}`
+        */
+ 
+        //strings .lengts length er længden på navnet altså 5 bogstaver
+        /*
+        const name = "Peter";
+        const len = name.length;
+        
+        console.log(`${name} is ${len} characters long`);
+        //vi ber den om at tage det der står på 0 plads i objektet som er p
+        const letter = name[0];
+        console.log(`The first letter of ${name} is ${letter}`);
+        */
+ 
+        //Albus Percival Wulfric Brian Dumbledore øvelse
+        //39 bogstaver langt
+        /*
+        const name = "Albus Percival Wulfric Brian Dumbledore";
+        const len = name.length;
+        
+        console.log(`${name} is ${len} characters long`);
+        //index 2 bogstav er b
+        /*
+        const letter = name[2];
+        console.log(`The third letter of ${name} is ${letter}`);
+        */
+        //index 6 bogstav er P
+        /*
+        const letter = name[6];
+        console.log(`The 7th letter of ${name} is ${letter}`);
+        */
+ 
+        //index af første D in Dumbledore = 29
+        /*
+        const name = "Albus Percival Wulfric Brian Dumbledore";
+        console.log(name.indexOf("D"));
+        */
+ 
+        //.trim fjerner whitespace i starten og slutningen
+ 
+        //SUBSTRING
+        /*
+        const fullName = "Frederikke Nygaard"
+        const firstName = fullName.substring(0,5)
+        console.log(firstName+"_");
+        */
+ 
+        //(0,5) er værdien til Albus
+        /*
+        const fullName = "Albus Percival Wulfric Brian Dumbledore"
+        const firstName = fullName.substring(0,5)
+        console.log(firstName+"_");
+        */
+ 
+        //(29) er værdien til Dumbledore
+        /*
+        const fullName = "Albus Percival Wulfric Brian Dumbledore"
+        const firstName = fullName.substring(29)
+        console.log(fullName.indexOf("D"));
+        console.log(fullName.lastIndexOf("e"));
+        console.log(firstName+"_");
+        */
+ 
+ 
+        //Wulfric er (15, 22)
+        /*
+        const fullName = "Albus Percival Wulfric Brian Dumbledore"
+        const firstName = fullName.substring(15, 22)
+        console.log(fullName.indexOf("W"));
+        console.log(firstName+"_");
+        */
+ 
+        //gruppe 6. 3, 18, 20, 11
+ 
+        //3  prototype.at
+ 
+        //18    .toLocaleUpperCase
+ 
+        //20   console.log(greeting.trim());
+ 
+ 
+        //11   substring.length
+ 
+        //Name part
+/*
+        const fullName = "Peter Heronimous Lind"
+        const firstName = fullName.substring(0, fullName.indexOf(" "))
+        const middleName = "Heronimous"
+        const lastName = "Lind"
+*/
+        /*
+        //Peter er 0
+        const indexOfFirst = fullName.indexOf(firstName);
+        console.log(`The index of the first "${firstName}" is ${indexOfFirst}`)
+        */
+ 
+        //Heronimous er 6
+        /*
+        const indexOfFirst = fullName.indexOf(middleName);
+        console.log(`The index of the first "${middleName}" is ${indexOfFirst}`)
+        */
+ 
+ 
+        //Lind er 17
+        /*
+        const indexOfFirst = fullName.indexOf(lastName);
+        console.log(`The index of the first "${lastName}" is ${indexOfFirst}`)
+        */
+ 
+        //3caPitalization
+        // console.log(firstName.toUpperCase());
+        /*
+        let firstPart = firstName.substring(0, 2)
+        let secondPart = firstName[2]
+        let thirdPart = firstName.substring(3)
+        let threeCapitalize = firstPart.toLocaleLowerCase() + secondPart.toLocaleUpperCase() + thirdPart.toLowerCase();
+        console.log(threeCapitalize)
+*/
+//Capitalization
+ 
+    </script>
+
+</body>
+
+</html>

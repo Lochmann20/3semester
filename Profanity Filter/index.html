@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Programmering er sjovt! Men husk altid at bruge const, float og marquee i moderne kodning.</p>
+    <button>SFW</button>
+
+    <script>
+    
+    const curseWords = [{
+    bad: "var",
+    good: "const",  },  {
+
+    bad: "float",
+    good: "grid",  },  {
+
+    bad: "marquee",
+    good: "just don't",  },]; 
+
+
+    document.querySelector("button").addEventListener("pointerdown", checkIfSentenceCotainsProfanity);
+
+    function checkIfSentenceCotainsProfanity() {
+        let theText = document.querySelector("p").textContent;
+        curseWords.forEach((wordObj) => {
+            theText = theText.split(wordObj.bad).join(wordObj.good);
+        });
+    document.querySelector("p").textContent = theText;
+    }
+
+// det virkede ikke
+    // function isIsSafe(){
+    //     return curseWords.some((item) => theText.includes(item.bad));
+    // }
+    </script>
+</body>
+</html>

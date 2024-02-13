@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<style>
+    body{
+        margin: 45em;
+        margin-top: 15%;
+        background: var(--bg);
+        color: var(--color);
+    }
+
+
+    select{
+        background-color: transparent;
+        padding-top: 2px;
+        border: none;
+        font-size: larger;
+    }
+
+    label{
+        display: flex;
+        gap: 20px;
+    }
+
+    [data-theme="light"]{
+        --bg: pink;
+        --color: black;
+    }
+
+    [data-theme="hawaii"]{
+        --bg: red;
+        --color: white;
+    }
+
+    [data-theme="dark"]{
+        --bg: darkblue;
+        --color: white;
+    }
+
+</style>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher</title>
+    <script type="module" src="js.js"></script>
+</head>
+
+
+<body data-theme="light">
+    <label>
+        <h1>Theme Switcher</h1>
+        <select class="option" name="option">
+          <option id="value" value="">Choose a color...</option>
+          <option value="light">Light</option>
+          <option value="hawaii">Hawaii</option>
+          <option value="dark">Dark</option>
+        </select>
+    </label>
+
+    <h2>Hejsa</h2>
+
+
+<script>
+"use strict"
+
+document.querySelector(".option").addEventListener("change", theChange);
+
+function theChange(evt){
+    console.log("change", evt.target.value);
+    document.querySelector("body").dataset.theme = evt.target.value;
+}
+
+</script>
+</body>
+
+</html>
