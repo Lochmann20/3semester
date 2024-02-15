@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<style>
+body{
+  background: hsl(var(--x) 50% 60%);
+}
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+<script>
+console.clear()
+const html = document.querySelector("html");
+
+html.addEventListener("mousemove", event => {
+  
+  const x = event.x / window.innerWidth * 360
+  html.style.setProperty("--x", x);
+  console.log(event.x);
+});
+</script>
+
+
+</body>
+</html>
