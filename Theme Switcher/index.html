@@ -72,7 +72,10 @@ document.querySelector(".option").addEventListener("change", theChange);
 function theChange(evt){
     console.log("change", evt.target.value);
     document.querySelector("body").dataset.theme = evt.target.value;
+    localStorage.setItem("theme", evt.target.value);
 }
+
+document.querySelector("body").dataset.theme = localStorage.getItem("theme");
 
 </script>
 </body>

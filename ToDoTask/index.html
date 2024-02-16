@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<style>
+
+    body{
+        width: 100%;
+        min-height: 86vh;
+        background: #897676;
+    }
+
+    .todo{
+        padding: 15px 50px 10px;
+        background-color: #ffd9df;
+        width: 100%;
+        max-width: 550px;
+        margin: 100px auto 10px;
+        box-shadow: -1px -1px 91px #5f5f5f;;
+    }
+
+    button,
+    input{
+        padding: 10px 20px;
+        border-radius: 15px;
+    }
+
+    ul li{
+        padding: 15px 20px;
+        cursor: pointer;
+        user-select: none;
+        list-style: none;
+        position: relative;
+        border-bottom: 1px solid black;
+    }
+
+    ul li::before{
+        content: '';
+        background-image: url(circle-regular.svg);
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        top: 1em;
+        left: -1.5em;
+    }
+    
+    ul li.checked{
+        color: #555;
+        text-decoration: line-through;
+    }
+    
+    ul li.checked::before{
+        background-image: url(check-solid.svg);
+    }
+
+    ul li span{
+        position: absolute;
+        right: 0;
+        top: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        color: black;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    ul li span:hover{
+        background: white;
+    }
+
+</style>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Task</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="todo">
+            <h2>To Do List</h2>
+            <div>
+                <input type="text" id="input-Box" placeholder="Add text">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- <li class="checked">Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li>
+                <li>Task</li> -->
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        const inputBox = document.getElementById("input-Box");
+        const listContainer = document.getElementById("list-container");
+
+        function addTask() {
+            if(inputBox.value === "") {
+                alert("Du skal skrive noget i din to do");
+            } else {
+            let li = document.createElement("li");
+            li.innerHTML = inputBox.value;
+            listContainer.appendChild(li);
+
+            let span = document.createElement("span");
+            span.innerHTML = "\u00d7";
+            li.appendChild(span);
+        }
+        inputBox.value = "";
+        saveData();
+    }
+
+    listContainer.addEventListener("click", function(e) {
+        if(e.target.tagName === "LI"){
+            e.target.classList.toggle("checked");
+            saveData();
+        } else if(e.target.tagName === "SPAN"){
+            e.target.parentElement.remove();
+            saveData();
+        }
+    }, false);
+
+
+    function saveData() {
+        localStorage.setItem("data", listContainer.innerHTML);
+    }
+
+    function showTask(){
+        listContainer.innerHTML = localStorage.getItem("data");
+    }
+    showTask();
+
+    </script>
+</body>
+</html>
